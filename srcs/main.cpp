@@ -42,21 +42,28 @@ int main(int argc, char **argv) {
     try {
         if (argc == 1) {
             Server server;
-            return 42;
+            return 0;
         } else if (argc == 2) { // only password set ! 
-        string password = argv[1];
+            string password = argv[1];
             Server server(password);
-            return 1;
+            return 0;
         } else if (argc == 3) {
             string hostname(argv[1]);
             string port(argv[2]);
             Server(hostname, port);
             // connect to server using params
-            return 1;
+            return 0;
         } else if (argc == 4) {
+            string hostname(argv[1]);
+            string port(argv[2]);
+            string password = argv[3];
+            Server(hostname, port, password);
+            return 0;
+        } else {
             return 42;
         }
     } catch (...) {
         LOG(ERROR) << "Error setting up server";
+        return 42;
     }
 }
