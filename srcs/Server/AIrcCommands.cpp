@@ -329,12 +329,12 @@ void AIrcCommands::PART(Command &cmd, int fd) {
     }
     channel.deleteUser(user);
     user.ch_name_mask_map.erase(channel.name);
-    maybeRemoveChannel(channel);
     if (size == 3) {
         return sendPartMessage(cmd.args[2], fd, user, channel);
     }
     string no_message = "";
     sendPartMessage(no_message, fd, user, channel);
+    maybeRemoveChannel(channel);
 }
 
 /**
