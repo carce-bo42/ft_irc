@@ -66,7 +66,7 @@ class FdManager {
 
     ConnInfo last_connection;
 
-    struct pollfd fds[MAX_FDS];
+    struct pollfd fds[255]; // MAX_FDS
     int fds_size;
     struct addrinfo *servinfo;
     int listener;

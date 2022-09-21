@@ -5,8 +5,6 @@
 #include <map>
 #include <string>
 
-#include "Types.hpp"
-
 namespace irc {
 
 class User;

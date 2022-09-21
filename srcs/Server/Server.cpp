@@ -13,6 +13,7 @@
 #include "NumericReplies.hpp"
 #include "Log.hpp"
 #include "libft.h"
+#include "Types.hpp"
 
 using std::string;
 using std::vector;

@@ -19,6 +19,12 @@
 
 using std::string;
 
+typedef enum {
+    LISTENER_BACKLOG = 20,
+    MAX_FDS = 255,
+    POLL_TIMEOUT_MS = 1000
+} FD_MANAGER_CONFIG;
+
 namespace irc {
 
 FdManager::FdManager(void)

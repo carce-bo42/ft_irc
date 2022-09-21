@@ -4,8 +4,6 @@
 #include "User.hpp"
 #include "Tools.hpp"
 
-#include <Types.hpp>
-
 using std::string;
 using std::list;
 
