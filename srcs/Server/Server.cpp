@@ -22,9 +22,10 @@ using std::vector;
  * IRC 'handshake'
  * http://chi.cs.uchicago.edu/chirc/irc_examples.html
  * 
- * install Weechat (Hell) on Ubuntu
+ * install Weechat from repo (Hell) on Ubuntu
  * https://weechat.org/files/doc/stable/weechat_user.en.html#dependencies
  * https://weechat.org/files/doc/stable/weechat_user.en.html
+ * else you can just apt install weechat lmao
  * 
  * Userguide to Weechat:
  * https://www.linode.com/docs/guides/using-weechat-for-irc/
@@ -40,40 +41,28 @@ Server::Server(void)
 :
     AIrcCommands()
 {
-    ft_memset(srv_buff, '\0', BUFF_MAX_SIZE);
-    srv_buff_size = 0;
-    loadCommandMap();
-    mainLoop();
+    init();
 }
 
 Server::Server(string& password)
 :
     AIrcCommands(password)
 {
-    ft_memset(srv_buff, '\0', BUFF_MAX_SIZE);
-    srv_buff_size = 0;
-    loadCommandMap();
-    mainLoop();
+    init();
 }
 
 Server::Server(string &hostname, string &port)
 :
     AIrcCommands(hostname, port)
 {
-    ft_memset(srv_buff, '\0', BUFF_MAX_SIZE);
-    srv_buff_size = 0;
-    loadCommandMap();
-    mainLoop();
+    init();
 }
 
 Server::Server(string &hostname, string &port, string &password)
 :
     AIrcCommands(hostname, port, password)
 {
-    ft_memset(srv_buff, '\0', BUFF_MAX_SIZE);
-    srv_buff_size = 0;
-    loadCommandMap();
-    mainLoop();
+    init();
 }
 
 Server::Server(const Server& other)
@@ -89,6 +78,13 @@ Server::Server(const Server& other)
 }
 
 Server::~Server(void) {
+}
+
+void Server::init(void) {
+    ft_memset(srv_buff, '\0', BUFF_MAX_SIZE);
+    srv_buff_size = 0;
+    loadCommandMap();
+    mainLoop();
 }
 
 void Server::loadCommandMap(void) {

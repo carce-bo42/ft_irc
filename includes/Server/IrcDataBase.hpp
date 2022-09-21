@@ -2,6 +2,7 @@
 # define IRC42_IRCDATABASE_H
 
 #include "Types.hpp"
+#include "Channel.hpp"
 #include <string>
 
 namespace irc {

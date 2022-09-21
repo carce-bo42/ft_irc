@@ -28,7 +28,6 @@ typedef enum {
     PING_TIMEOUT_S = 120
 } SERVER_CONFIG;
 
-
 typedef enum {
     NO_NUMERIC_REPLY = 0,
     NUMERIC_REPLY
@@ -42,11 +41,6 @@ typedef enum {
     CH_MOD = 2,
     CH_TOP = 1
 } IRC_MODES;
-
-class Channel;
-class User;
-class Command;
-class AIrcCommands;
 
 }
 

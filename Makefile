@@ -36,17 +36,6 @@ LIBFT = libft.a
 
 INC_DIR = includes/
 
-UNAME := $(shell uname)
-# Compiles using threads (make re doesnt work with this, so fuck it). 
-# See https://stackoverflow.com/questions/4778389/automatically-setting-jobs-j-flag-for-a-multicore-machine (Linux)
-# See https://stackoverflow.com/questions/1715580/how-to-discover-number-of-logical-cores-on-mac-os-x (MacosX)
-ifeq ($(UNAME), Linux)
-#export MAKEFLAGS="-j $(nproc --all)"
-endif
-ifeq ($(UNAME), Darwin)
-#export MAKEFLAGS="-j $(sysctl -n hw.ncpu)"
-endif
-
 all: 		$(NAME)
 
 %.o: 		%.cpp
@@ -56,7 +45,6 @@ $(LIBFT_DIR)$(LIBFT): \
 			$(LIBFT_DIR)
 			make -C $(dir $(LIBFT_DIR))
 
-# See https://stackoverflow.com/questions/42586080/gcc-linking-object-files-with-warning-optimization-flags
 $(NAME): 	$(OBJS) $(dir $(LIBFT_DIR))$(LIBFT)
 			$(CXX) $(OBJS) $(CXXFLAGS) $(LIBFT_LINK) -o  $@
 

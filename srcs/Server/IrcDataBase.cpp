@@ -141,7 +141,10 @@ Channel& IrcDataBase::getChannelFromName(string& name) {
 }
 
 void IrcDataBase::updateUserInChannels(irc::User &user, string new_nick) {
-    for (std::map<string, unsigned char>::iterator it = user.ch_name_mask_map.begin(); it != user.ch_name_mask_map.end(); it++) {
+    for (std::map<string, unsigned char>::iterator
+            it = user.ch_name_mask_map.begin();
+            it != user.ch_name_mask_map.end(); it++)
+    {
         string ch_name = it->first;
         Channel &channel = getChannelFromName(ch_name);
         channel.updateUserNick(user.nick, new_nick);

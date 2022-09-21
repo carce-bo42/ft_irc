@@ -3,6 +3,7 @@
 
 #include "FdManager.hpp"
 #include "IrcDataBase.hpp"
+#include "Command.hpp"
 
 // A stands for Abstract
 

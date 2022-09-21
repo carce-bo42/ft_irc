@@ -23,6 +23,8 @@ class Server : public AIrcCommands {
     
     private:
 
+    void init();
+
     bool serverHasPassword();
     void maybeRegisterUser(User &user);
     void registerUser(User &user);
